@@ -12,7 +12,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowDropDown
+import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Checkbox
@@ -34,7 +38,10 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+
+
 
 @Composable
 fun FormBiodataScreen() {
@@ -72,14 +79,12 @@ fun FormBiodataScreen() {
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .fillMaxHeight(0.78f)
+                    .padding(top = 250.dp) // <--- Tambahkan kode ini untuk mendorong form ke bawah
                     .align(Alignment.BottomCenter)
-                    .clip(
-                        RoundedCornerShape(
-                            topStart = dimensionResource(id = R.dimen.corner_radius_large),
-                            topEnd = dimensionResource(id = R.dimen.corner_radius_large)
-                        )
-                    )
+                    .clip(RoundedCornerShape(
+                        topStart = dimensionResource(id = R.dimen.corner_radius_large),
+                        topEnd = dimensionResource(id = R.dimen.corner_radius_large)
+                    ))
                     .background(colorResource(id = R.color.white_bg))
                     .padding(dimensionResource(id = R.dimen.padding_large))
             ) {
@@ -185,7 +190,7 @@ fun FormBiodataScreen() {
                         }
                     }
 
-                    Spacer(modifier = Modifier.weight(1f))
+                    Spacer(modifier = Modifier.height(50.dp))
 
                     Button(
                         onClick = { /* Biarkan kosong sesuai kebutuhan tampilan */ },
@@ -203,6 +208,7 @@ fun FormBiodataScreen() {
                             fontWeight = FontWeight.Bold
                         )
                     }
+                }
             }
         }
     }

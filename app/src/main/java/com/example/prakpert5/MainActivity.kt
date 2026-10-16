@@ -19,12 +19,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Prakpert5Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                // HAPUS Greeting("Android")
+                // PANGGIL NAMA FUNGSI FORM-MU DI SINI:
+                FormBiodataScreen()
             }
         }
     }
