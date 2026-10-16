@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
@@ -184,6 +186,23 @@ fun FormBiodataScreen() {
                     }
 
                     Spacer(modifier = Modifier.weight(1f))
+
+                    Button(
+                        onClick = { /* Biarkan kosong sesuai kebutuhan tampilan */ },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(dimensionResource(id = R.dimen.btn_height)),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = colorResource(id = R.color.gray_btn_bg)
+                        ),
+                        shape = RoundedCornerShape(dimensionResource(id = R.dimen.corner_radius_small))
+                    ) {
+                        Text(
+                            text = stringResource(id = R.string.btn_proceed),
+                            color = colorResource(id = R.color.white_text),
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
             }
         }
     }
