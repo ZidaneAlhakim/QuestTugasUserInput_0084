@@ -41,6 +41,16 @@ fun FormBiodataScreen() {
                 .padding(innerPadding)
         ) {
 
+            Image(
+                painter = painterResource(id = R.drawable.bg_header),
+                contentDescription = null,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(dimensionResource(id = R.dimen.bg_height))
+                    .align(Alignment.TopCenter)
+            )
+
         }
     }
 }
