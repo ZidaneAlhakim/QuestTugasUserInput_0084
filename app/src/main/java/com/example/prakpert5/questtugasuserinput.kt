@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
@@ -162,6 +163,27 @@ fun FormBiodataScreen() {
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.fillMaxWidth()
                     )
+
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Checkbox(checked = isAndroid, onCheckedChange = { isAndroid = it })
+                            Text(stringResource(id = R.string.skill_android), fontSize = dimensionResource(id = R.dimen.text_body).value.sp)
+                        }
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Checkbox(checked = isUiUx, onCheckedChange = { isUiUx = it })
+                            Text(stringResource(id = R.string.skill_uiux), fontSize = dimensionResource(id = R.dimen.text_body).value.sp)
+                        }
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Checkbox(checked = isWeb, onCheckedChange = { isWeb = it })
+                            Text(stringResource(id = R.string.skill_web), fontSize = dimensionResource(id = R.dimen.text_body).value.sp)
+                        }
+                    }
+
+                    Spacer(modifier = Modifier.weight(1f))
             }
         }
     }
