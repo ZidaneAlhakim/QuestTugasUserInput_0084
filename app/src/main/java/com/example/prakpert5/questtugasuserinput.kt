@@ -153,6 +153,15 @@ fun FormBiodataScreen() {
                             shape = RoundedCornerShape(dimensionResource(id = R.dimen.corner_radius_small))
                         )
                     }
+
+                    Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_large)))
+
+                    // Checkbox Skills
+                    Text(
+                        text = stringResource(id = R.string.label_skill),
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.fillMaxWidth()
+                    )
             }
         }
     }
