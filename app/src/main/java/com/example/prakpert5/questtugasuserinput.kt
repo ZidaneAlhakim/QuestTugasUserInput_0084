@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -130,6 +131,28 @@ fun FormBiodataScreen() {
                     )
 
                     Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.padding_medium)))
+
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_medium))
+                    ) {
+                        OutlinedTextField(
+                            value = textTglLahir,
+                            onValueChange = { textTglLahir = it },
+                            label = { Text(stringResource(id = R.string.hint_tgl_lahir)) },
+                            trailingIcon = { Icon(Icons.Default.DateRange, contentDescription = null) },
+                            modifier = Modifier.weight(1f),
+                            shape = RoundedCornerShape(dimensionResource(id = R.dimen.corner_radius_small))
+                        )
+                        OutlinedTextField(
+                            value = textExperience,
+                            onValueChange = { textExperience = it },
+                            label = { Text(stringResource(id = R.string.hint_experience)) },
+                            trailingIcon = { Icon(Icons.Default.ArrowDropDown, contentDescription = null) },
+                            modifier = Modifier.weight(1f),
+                            shape = RoundedCornerShape(dimensionResource(id = R.dimen.corner_radius_small))
+                        )
+                    }
             }
         }
     }
